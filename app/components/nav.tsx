@@ -20,21 +20,11 @@ function Nav() {
             </Link>
           </div>
           <div className="hidden md:block flex items-center space-x-6 py-4">
-            <Link to="/">
-              <span className="">Surprise!</span>
-            </Link>
-            <Link to="/">
-              <span className="">FAQ</span>
-            </Link>
-            <Link to="/">
-              <span className="">Schedule</span>
-            </Link>
-            <Link to="/">
-              <span className="">Travel</span>
-            </Link>
-            <Link to="/">
-              <span className="">Registry</span>
-            </Link>
+            <Link to="/surprise">Surprise!</Link>
+            <Link to="/faq">FAQ</Link>
+            <Link to="/schedule">Schedule</Link>
+            <Link to="/travel">Travel</Link>
+            <Link to="/registry">Registry</Link>
           </div>
           <div>
             <button
@@ -54,30 +44,22 @@ function Nav() {
       <div
         className={`${
           open ? "" : "hidden"
-        } md:hidden bg-black opacity-90 text-white`}
+        } md:hidden absolute w-full bg-black text-white`}
       >
-        <Link to="/">
-          <span className="block py-2 px-4 text-sm hover:bg-gray-100">
-            Surprise!
-          </span>
+        <Link to="/surprise" onClick={() => setOpen(!open)}>
+          <span className="block py-2 px-4 text-md">Surprise!</span>
         </Link>
-        <Link to="/">
-          <span className="block py-2 px-4 text-sm hover:bg-gray-100">FAQ</span>
+        <Link to="/faq" onClick={() => setOpen(!open)}>
+          <span className="block py-2 px-4 text-md">FAQ</span>
         </Link>
-        <Link to="/">
-          <span className="block py-2 px-4 text-sm hover:bg-gray-100">
-            Schedule
-          </span>
+        <Link to="/schedule" onClick={() => setOpen(!open)}>
+          <span className="block py-2 px-4 text-md">Schedule</span>
         </Link>
-        <Link to="/">
-          <span className="block py-2 px-4 text-sm hover:bg-gray-100">
-            Travel
-          </span>
+        <Link to="/travel" onClick={() => setOpen(!open)}>
+          <span className="block py-2 px-4 text-md">Travel</span>
         </Link>
-        <Link to="/">
-          <span className="block py-2 px-4 text-sm hover:bg-gray-100">
-            Registry
-          </span>
+        <Link to="/registry" onClick={() => setOpen(!open)}>
+          <span className="block py-2 px-4 text-md">Registry</span>
         </Link>
       </div>
     </nav>
