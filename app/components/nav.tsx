@@ -11,8 +11,8 @@ import SvgCloseFill from "./icons/close-fill";
 function Nav() {
   let [open, setOpen] = useState(false);
   return (
-    <nav className="bg-grey-100 hidden">
-      <div className="px-2 mx-auto border border-red-400">
+    <nav>
+      <div className="bg-black opacity-90 text-white px-2">
         <div className="flex items-center justify-between space-x-4">
           <div>
             <Link to="/" className="md:hidden">
@@ -42,16 +42,20 @@ function Nav() {
               className="md:hidden flex py-4"
             >
               {open ? (
-                <SvgCloseFill className="w-6 h-6" />
+                <SvgCloseFill className="w-6 h-6 fill-white" />
               ) : (
-                <SvgMenuLine className="h-6 w-6" />
+                <SvgMenuLine className="h-6 w-6 fill-white" />
               )}
             </button>
           </div>
         </div>
       </div>
       {/* Mobile Menu */}
-      <div className={`${open ? "" : "hidden"} md:hidden`}>
+      <div
+        className={`${
+          open ? "" : "hidden"
+        } md:hidden bg-black opacity-90 text-white`}
+      >
         <Link to="/">
           <span className="block py-2 px-4 text-sm hover:bg-gray-100">
             Surprise!
