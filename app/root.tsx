@@ -24,7 +24,9 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <Nav />
+      <div>
+        <Nav />
+      </div>
       <body>
         <Outlet />
         <ScrollRestoration />

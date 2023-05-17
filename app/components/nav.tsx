@@ -3,23 +3,19 @@ import { Link } from "@remix-run/react";
 import SvgMenuLine from "./icons/menu-line";
 import SvgCloseFill from "./icons/close-fill";
 
-/*
-<div onClick={() => setOpen(!open)} className="md:hidden">
-  {open ? <SvgCloseFill /> : <SvgMenuLine />}
-</div>;
-*/
 function Nav() {
   let [open, setOpen] = useState(false);
   return (
     <nav>
-      <div className="bg-black opacity-90 text-white px-2">
+      <div className="bg-black text-white px-2">
         <div className="flex items-center justify-between space-x-4">
           <div>
             <Link to="/" className="md:hidden">
-              <span className="text-xl left-0">R & J</span>
+              <span className="text-xl left-0 ">R & J</span>
             </Link>
           </div>
           <div className="hidden md:block flex items-center space-x-6 py-4">
+            <Link to="/">Home</Link>
             <Link to="/surprise">Surprise!</Link>
             <Link to="/faq">FAQ</Link>
             <Link to="/schedule">Schedule</Link>
@@ -46,6 +42,9 @@ function Nav() {
           open ? "" : "hidden"
         } md:hidden absolute w-full bg-black text-white`}
       >
+        <Link to="/" onClick={() => setOpen(!open)}>
+          <span className="block py-2 px-4 text-md">Home</span>
+        </Link>
         <Link to="/surprise" onClick={() => setOpen(!open)}>
           <span className="block py-2 px-4 text-md">Surprise!</span>
         </Link>
